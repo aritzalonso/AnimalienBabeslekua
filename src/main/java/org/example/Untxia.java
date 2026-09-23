@@ -8,7 +8,7 @@ public class Untxia extends Animalia {
 
     @Override
     public void eginSoinua() {
-        System.out.println(getIzena() + " untxia: wfifw iwf!");
+        System.out.println( " untxia: wfifw iwf!");
     }
 
     @Override

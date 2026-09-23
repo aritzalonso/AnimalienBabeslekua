@@ -2,6 +2,9 @@ package org.example;
 
 
     public abstract class Animalia {
+        private boolean adoptatua;
+        private int adina;
+        private double pisua;
         public boolean isAdoptatua() {
             return adoptatua;
         }
@@ -10,7 +13,6 @@ package org.example;
             this.adoptatua = adoptatua;
         }
 
-        private boolean adoptatua;
 
         public int getAdina() {
             return adina;
@@ -20,7 +22,7 @@ package org.example;
             this.adina = adina;
         }
 
-        private int adina;
+
 
         public double getPisua() {
             return pisua;
@@ -30,7 +32,6 @@ package org.example;
             this.pisua = pisua;
         }
 
-        private double pisua;
 
         public String getIzena() {
             return izena;
@@ -50,5 +51,8 @@ package org.example;
             this.adina = adina;
             this.pisua = pisua;
             this.adoptatua = false;
+        }
+
+        public void adoptatu() {
         }
     }
