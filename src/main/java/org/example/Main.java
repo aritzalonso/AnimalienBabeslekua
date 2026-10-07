@@ -1,9 +1,10 @@
+
 package org.example;
+
+import javafx.application.Application;
 
 public class Main {
     public static void main(String[] args) {
-        Babeslekua babeslekua = new Babeslekua();
-        Menua menua = new Menua(babeslekua);
-        menua.exekutatu();
+        Application.launch(BabeslekuaApp.class, args);
     }
 }

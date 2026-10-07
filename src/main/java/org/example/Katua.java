@@ -1,14 +1,13 @@
 package org.example;
 
 public class Katua extends Animalia {
-
     public Katua(String izena, int adina, double pisua) {
         super(izena, adina, pisua);
     }
 
     @Override
-    public void eginSoinua() {
-        System.out.println(getIzena() + " Katua : Miau Miau!");
+    public String eginSoinua() {
+        return getIzena() + " Katua : Miau Miau!";
     }
 
     @Override

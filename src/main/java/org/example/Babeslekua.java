@@ -8,14 +8,15 @@ public class Babeslekua {
         animaliak = new ArrayList<>();
     }
 
-    public void eginSoinuak() {
+    public String eginSoinuak() {
         if (animaliak.isEmpty()) {
-            System.out.println("Ez dago animaliarik babeslekuan.");
-            return;
+            return "Ez dago animaliarik babeslekuan.";
         }
+        StringBuilder sb = new StringBuilder();
         for (Animalia a : animaliak) {
-            a.eginSoinua();
+            sb.append(a.eginSoinua()).append("\n");
         }
+        return sb.toString();
     }
 
     public void gehituAnimalia(Animalia animalia) {
@@ -49,13 +50,15 @@ public class Babeslekua {
         return null;
     }
 
-    public void erakutsiAnimaliak() {
+
+    public String erakutsiAnimaliak() {
         if (animaliak.isEmpty()) {
-            System.out.println("Ez dago animaliarik babeslekuan.");
-            return;
+            return "Ez dago animaliarik babeslekuan.";
         }
+        StringBuilder sb = new StringBuilder();
         for (Animalia a : animaliak) {
-            System.out.println(a);
+            sb.append(a.toString()).append("\n");
         }
+        return sb.toString();
     }
 }
