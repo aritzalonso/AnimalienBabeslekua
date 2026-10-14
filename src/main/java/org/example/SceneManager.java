@@ -1,8 +1,7 @@
-
+// SceneManager.java
 package org.example;
 
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 import org.example.controller.AdoptatuController;
 import org.example.controller.EzabatuController;
 import org.example.controller.GehituController;
@@ -13,50 +12,46 @@ import org.example.view.GehituView;
 import org.example.view.NagusiaView;
 
 public class SceneManager {
-    private Stage stage;
+    private Scene scene;
     private Babeslekua model;
-    private Scene nagusiaScene;
     private NagusiaView nagusiaView;
 
-    public SceneManager(Stage stage, Babeslekua model) {
-        this.stage = stage;
+    public SceneManager(Scene scene, Babeslekua model) {
+        this.scene = scene;
         this.model = model;
-        this.stage.setTitle("Animalien Babeslekua");
-
 
         this.nagusiaView = new NagusiaView();
         NagusiaController nagusiaController = new NagusiaController(this.model, this.nagusiaView, this);
         this.nagusiaView.setController(nagusiaController);
 
-        this.nagusiaScene = new Scene(nagusiaView, 700, 500);
+        erakutsiNagusia(null);
     }
 
     public void erakutsiNagusia(String mezuBerria) {
         if (mezuBerria != null && !mezuBerria.isEmpty()) {
             nagusiaView.gehituMezua(mezuBerria);
         }
-        stage.setScene(nagusiaScene);
-        stage.show();
+        scene.setRoot(nagusiaView);
     }
 
     public void erakutsiGehitu() {
         GehituView view = new GehituView();
         GehituController controller = new GehituController(model, view, this);
         view.setController(controller);
-        stage.setScene(new Scene(view, 700, 500));
+        scene.setRoot(view);
     }
 
     public void erakutsiAdoptatu() {
         AdoptatuView view = new AdoptatuView();
         AdoptatuController controller = new AdoptatuController(model, view, this);
         view.setController(controller);
-        stage.setScene(new Scene(view, 700, 500));
+        scene.setRoot(view);
     }
 
     public void erakutsiEzabatu() {
         EzabatuView view = new EzabatuView();
         EzabatuController controller = new EzabatuController(model, view, this);
         view.setController(controller);
-        stage.setScene(new Scene(view, 700, 500));
+        scene.setRoot(view);
     }
 }

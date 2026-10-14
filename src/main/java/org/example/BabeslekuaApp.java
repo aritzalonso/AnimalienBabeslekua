@@ -11,7 +11,7 @@ public class BabeslekuaApp extends Application {
 
         Babeslekua model = new Babeslekua();
 
-        SceneManager sceneManager = new SceneManager(primaryStage, model);
+        SceneManager sceneManager = new SceneManager(primaryStage.getScene(), model);
 
         sceneManager.erakutsiNagusia(null);
     }
