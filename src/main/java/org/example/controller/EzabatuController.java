@@ -1,5 +1,9 @@
-// EzabatuController.java
-package org.example;
+
+package org.example.controller;
+
+import org.example.Babeslekua;
+import org.example.SceneManager;
+import org.example.view.EzabatuView;
 
 public class EzabatuController {
     private Babeslekua model;

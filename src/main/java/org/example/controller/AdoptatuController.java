@@ -1,5 +1,9 @@
 // AdoptatuController.java
-package org.example;
+package org.example.controller;
+
+import org.example.Babeslekua;
+import org.example.SceneManager;
+import org.example.view.AdoptatuView;
 
 public class AdoptatuController {
     private Babeslekua model;

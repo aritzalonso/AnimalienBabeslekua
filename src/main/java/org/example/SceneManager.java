@@ -1,14 +1,20 @@
-// SceneManager.java
+
 package org.example;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.controller.AdoptatuController;
+import org.example.controller.EzabatuController;
+import org.example.controller.GehituController;
+import org.example.controller.NagusiaController;
+import org.example.view.AdoptatuView;
+import org.example.view.EzabatuView;
+import org.example.view.GehituView;
+import org.example.view.NagusiaView;
 
 public class SceneManager {
     private Stage stage;
     private Babeslekua model;
-
-    // Guardamos la vista principal para no perder el historial del TextArea
     private Scene nagusiaScene;
     private NagusiaView nagusiaView;
 
@@ -17,7 +23,7 @@ public class SceneManager {
         this.model = model;
         this.stage.setTitle("Animalien Babeslekua");
 
-        // Inicializar la vista principal y su controlador
+
         this.nagusiaView = new NagusiaView();
         NagusiaController nagusiaController = new NagusiaController(this.model, this.nagusiaView, this);
         this.nagusiaView.setController(nagusiaController);

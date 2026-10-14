@@ -1,5 +1,5 @@
-// AdoptatuView.java
-package org.example;
+// EzabatuView.java
+package org.example.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -10,14 +10,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import org.example.controller.EzabatuController;
 
-public class AdoptatuView extends BorderPane {
+public class EzabatuView extends BorderPane {
     private TextField izenaField;
     private Label erroreLabel;
     private Button btnAdos;
     private Button btnUtzi;
 
-    public AdoptatuView() {
+    public EzabatuView() {
         VBox centerBox = new VBox(30);
         centerBox.setPadding(new Insets(40));
         centerBox.setAlignment(Pos.TOP_CENTER);
@@ -34,7 +35,7 @@ public class AdoptatuView extends BorderPane {
         erroreLabel = new Label("");
         erroreLabel.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
 
-        Label tituluLabel = new Label("Zein da adoptatu nahi duzun animaliaren izena?");
+        Label tituluLabel = new Label("Zein da ezabatu nahi duzun animaliaren izena?");
         tituluLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
 
         centerBox.getChildren().addAll(tituluLabel, grid, erroreLabel);
@@ -50,8 +51,8 @@ public class AdoptatuView extends BorderPane {
         this.setBottom(bottomBox);
     }
 
-    public void setController(AdoptatuController controller) {
-        btnAdos.setOnAction(e -> controller.adoptatu());
+    public void setController(EzabatuController controller) {
+        btnAdos.setOnAction(e -> controller.ezabatu());
         btnUtzi.setOnAction(e -> controller.utzi());
     }
 

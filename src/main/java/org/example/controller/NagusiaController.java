@@ -1,7 +1,10 @@
 
-package org.example;
+package org.example.controller;
 
 import javafx.application.Platform;
+import org.example.Babeslekua;
+import org.example.SceneManager;
+import org.example.view.NagusiaView;
 
 public class NagusiaController {
     private Babeslekua model;

@@ -1,28 +1,24 @@
-
-package org.example;
+// AdoptatuView.java
+package org.example.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import org.example.controller.AdoptatuController;
 
-public class GehituView extends BorderPane {
-    private ComboBox<String> motaBox;
+public class AdoptatuView extends BorderPane {
     private TextField izenaField;
-    private TextField adinaField;
-    private TextField pisuaField;
     private Label erroreLabel;
     private Button btnAdos;
     private Button btnUtzi;
 
-    public GehituView() {
-        // Centro (Formulario)
+    public AdoptatuView() {
         VBox centerBox = new VBox(30);
         centerBox.setPadding(new Insets(40));
         centerBox.setAlignment(Pos.TOP_CENTER);
@@ -32,33 +28,19 @@ public class GehituView extends BorderPane {
         grid.setVgap(10);
         grid.setAlignment(Pos.CENTER);
 
-        motaBox = new ComboBox<>();
-        motaBox.getItems().addAll("Txakurra", "Katua", "Untxia");
-        motaBox.getSelectionModel().selectFirst();
-
         izenaField = new TextField();
-        adinaField = new TextField();
-        pisuaField = new TextField();
-
-        grid.add(new Label("Mota:"), 0, 0);
-        grid.add(motaBox, 1, 0);
-        grid.add(new Label("Izena:"), 0, 1);
-        grid.add(izenaField, 1, 1);
-        grid.add(new Label("Adina:"), 0, 2);
-        grid.add(adinaField, 1, 2);
-        grid.add(new Label("Pisua (kg):"), 0, 3);
-        grid.add(pisuaField, 1, 3);
+        grid.add(new Label("Izena:"), 0, 0);
+        grid.add(izenaField, 1, 0);
 
         erroreLabel = new Label("");
         erroreLabel.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
 
-        Label tituluLabel = new Label("Sartu animalia berriaren datuak:");
+        Label tituluLabel = new Label("Zein da adoptatu nahi duzun animaliaren izena?");
         tituluLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
 
         centerBox.getChildren().addAll(tituluLabel, grid, erroreLabel);
         this.setCenter(centerBox);
 
-        // Abajo (Botones)
         HBox bottomBox = new HBox(15);
         bottomBox.setAlignment(Pos.CENTER);
         bottomBox.setPadding(new Insets(20));
@@ -69,14 +51,11 @@ public class GehituView extends BorderPane {
         this.setBottom(bottomBox);
     }
 
-    public void setController(GehituController controller) {
-        btnAdos.setOnAction(e -> controller.gorde());
+    public void setController(AdoptatuController controller) {
+        btnAdos.setOnAction(e -> controller.adoptatu());
         btnUtzi.setOnAction(e -> controller.utzi());
     }
 
-    public String getMota() { return motaBox.getValue(); }
     public String getIzena() { return izenaField.getText(); }
-    public String getAdina() { return adinaField.getText(); }
-    public String getPisua() { return pisuaField.getText(); }
     public void erakutsiErrorea(String mezua) { erroreLabel.setText(mezua); }
 }

@@ -1,5 +1,8 @@
 
-package org.example;
+package org.example.controller;
+
+import org.example.*;
+import org.example.view.GehituView;
 
 public class GehituController {
     private Babeslekua model;
@@ -36,7 +39,6 @@ public class GehituController {
 
             model.gehituAnimalia(animalia);
 
-            // Volver al inicio con mensaje de éxito
             sceneManager.erakutsiNagusia(animalia.getIzena() + " ongi gehitu da sistemara.\n");
 
         } catch (NumberFormatException ex) {
