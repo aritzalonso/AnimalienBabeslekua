@@ -6,4 +6,5 @@ module org.example {
     exports org.example;
     exports org.example.controller;
     exports org.example.view;
+    exports org.example.dao;
 }

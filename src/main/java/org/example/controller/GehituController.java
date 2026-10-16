@@ -1,4 +1,4 @@
-
+// GehituController.java (org.example.controller paketean)
 package org.example.controller;
 
 import org.example.*;
@@ -38,8 +38,8 @@ public class GehituController {
             };
 
             model.gehituAnimalia(animalia);
-
-            sceneManager.erakutsiNagusia(animalia.getIzena() + " ongi gehitu da sistemara.\n");
+            model.gehituErregistroa(animalia.getIzena() + " ongi gehitu da sistemara.");
+            sceneManager.erakutsiNagusia();
 
         } catch (NumberFormatException ex) {
             view.erakutsiErrorea("Adina eta Pisua eremuak zenbakiak izan behar dira.");
@@ -47,6 +47,6 @@ public class GehituController {
     }
 
     public void utzi() {
-        sceneManager.erakutsiNagusia(null);
+        sceneManager.erakutsiNagusia();
     }
 }

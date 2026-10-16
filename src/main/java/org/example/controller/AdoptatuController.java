@@ -1,4 +1,4 @@
-// AdoptatuController.java
+// AdoptatuController.java (org.example.controller paketean)
 package org.example.controller;
 
 import org.example.Babeslekua;
@@ -24,13 +24,14 @@ public class AdoptatuController {
         }
 
         if (model.adoptatuAnimalia(izena)) {
-            sceneManager.erakutsiNagusia(izena + " zoriontasunez adoptatu da!\n");
+            model.gehituErregistroa(izena + " zoriontasunez adoptatu da!");
+            sceneManager.erakutsiNagusia();
         } else {
             view.erakutsiErrorea("Errorea: " + izena + " ez da aurkitu edo jada adoptatuta dago.");
         }
     }
 
     public void utzi() {
-        sceneManager.erakutsiNagusia(null);
+        sceneManager.erakutsiNagusia();
     }
 }

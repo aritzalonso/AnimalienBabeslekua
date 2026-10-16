@@ -1,4 +1,4 @@
-
+// NagusiaController.java (org.example.controller paketean)
 package org.example.controller;
 
 import javafx.application.Platform;
@@ -15,6 +15,7 @@ public class NagusiaController {
         this.model = model;
         this.view = view;
         this.sceneManager = sceneManager;
+        this.view.setTestua(model.getErregistroa());
     }
 
     public void gehitu() {
@@ -22,7 +23,8 @@ public class NagusiaController {
     }
 
     public void erakutsi() {
-        view.gehituMezua(model.erakutsiAnimaliak() + "\n");
+        model.gehituErregistroa(model.erakutsiAnimaliak());
+        view.setTestua(model.getErregistroa());
     }
 
     public void adoptatu() {
@@ -34,11 +36,13 @@ public class NagusiaController {
     }
 
     public void soinuaEgin() {
-        view.gehituMezua(model.eginSoinuak() + "\n");
+        model.gehituErregistroa(model.eginSoinuak());
+        view.setTestua(model.getErregistroa());
     }
 
     public void txakurraLotu() {
-        view.gehituMezua("A-TA PERROOOO!!\n");
+        model.gehituErregistroa("A-TA PERROOOO!!");
+        view.setTestua(model.getErregistroa());
     }
 
     public void irten() {

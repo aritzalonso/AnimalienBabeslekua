@@ -14,21 +14,18 @@ import org.example.view.NagusiaView;
 public class SceneManager {
     private Scene scene;
     private Babeslekua model;
-    private NagusiaView nagusiaView;
 
     public SceneManager(Scene scene, Babeslekua model) {
         this.scene = scene;
         this.model = model;
-
-        this.nagusiaView = new NagusiaView();
-        NagusiaController nagusiaController = new NagusiaController(this.model, this.nagusiaView, this);
-        this.nagusiaView.setController(nagusiaController);
-
         erakutsiNagusia();
     }
 
     public void erakutsiNagusia() {
-        scene.setRoot(nagusiaView);
+        NagusiaView view = new NagusiaView();
+        NagusiaController controller = new NagusiaController(model, view, this);
+        view.setController(controller);
+        scene.setRoot(view);
     }
 
     public void erakutsiGehitu() {

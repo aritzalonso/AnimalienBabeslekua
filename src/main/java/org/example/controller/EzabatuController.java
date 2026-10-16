@@ -1,4 +1,4 @@
-
+// EzabatuController.java (org.example.controller paketean)
 package org.example.controller;
 
 import org.example.Babeslekua;
@@ -24,13 +24,14 @@ public class EzabatuController {
         }
 
         if (model.ezabatuAnimalia(izena)) {
-            sceneManager.erakutsiNagusia(izena + " ongi ezabatu da.\n");
+            model.gehituErregistroa(izena + " ongi ezabatu da.");
+            sceneManager.erakutsiNagusia();
         } else {
             view.erakutsiErrorea("Errorea: Ez da " + izena + " izeneko animaliarik aurkitu.");
         }
     }
 
     public void utzi() {
-        sceneManager.erakutsiNagusia(null);
+        sceneManager.erakutsiNagusia();
     }
 }

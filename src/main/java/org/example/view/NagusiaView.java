@@ -1,4 +1,4 @@
-
+// NagusiaView.java (org.example.view paketean)
 package org.example.view;
 
 import javafx.geometry.Insets;
@@ -19,7 +19,6 @@ public class NagusiaView extends BorderPane {
         testuEremua.setWrapText(true);
         testuEremua.setStyle("-fx-font-size: 14px; -fx-font-family: 'Consolas';");
         this.setCenter(testuEremua);
-        testuEremua.appendText("Ongi etorri Animalien Babeslekura!\n====================================\n");
 
         VBox botoiPanela = new VBox(10);
         botoiPanela.setPadding(new Insets(15));
@@ -53,7 +52,8 @@ public class NagusiaView extends BorderPane {
         btnIrten.setOnAction(e -> controller.irten());
     }
 
-    public void gehituMezua(String mezua) {
-        testuEremua.appendText(mezua);
+    public void setTestua(String testua) {
+        testuEremua.setText(testua);
+        testuEremua.positionCaret(testuEremua.getLength());
     }
 }
