@@ -24,13 +24,10 @@ public class SceneManager {
         NagusiaController nagusiaController = new NagusiaController(this.model, this.nagusiaView, this);
         this.nagusiaView.setController(nagusiaController);
 
-        erakutsiNagusia(null);
+        erakutsiNagusia();
     }
 
-    public void erakutsiNagusia(String mezuBerria) {
-        if (mezuBerria != null && !mezuBerria.isEmpty()) {
-            nagusiaView.gehituMezua(mezuBerria);
-        }
+    public void erakutsiNagusia() {
         scene.setRoot(nagusiaView);
     }
 
